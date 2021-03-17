@@ -1,0 +1,2 @@
+class ListFlag < ApplicationRecord
+end
