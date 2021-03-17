@@ -30,7 +30,6 @@
 | Column      | Type          | Options                        |
 | ----------- | ------------- | ------------------------------ |
 | user        | references    | null: false, foreign_key: true |
-| flag        | references    | null: false, foreign_key: true |
 
 ### lists Association
 - belongs_to :user
