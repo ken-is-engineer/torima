@@ -1,0 +1,30 @@
+<p><%= form_with(model: @status, local: true) do |form| %>
+
+  <div class="status">
+    <%= form.label "フラッグ名" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="submit">
+    <%= form.submit %>
+  </div>
+
+<% end %></p>
+
+<p><%= form_with(model: @flag, local: true) do |form| %>
+
+    <div class="time">
+    <%= form.label "日付を選択" %>
+    <%= form.datetime_select :start_time, {use_two_digit_numbers: true, start_year: Date.today.year, discard_minute: true, discard_hour: true}%>
+  </div>
+
+  <div class="status">
+    <%= form.label "ステータスを選択" %>
+    <%= form.select :status, Status.where(user_id: current_user.id).pluck(:name) %>
+  </div>
+
+  <div class="submit">
+    <%= form.submit %>
+  </div>
+
+<% end %></p>

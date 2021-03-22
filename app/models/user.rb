@@ -5,5 +5,7 @@ class User < ApplicationRecord
           :recoverable, :rememberable, :validatable
 
   has_many :flags
-  has_one  :list
+  has_many :lists
+  has_many :chats
+
 end

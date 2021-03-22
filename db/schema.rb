@@ -10,11 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_17_092622) do
+ActiveRecord::Schema.define(version: 2021_03_19_055350) do
+
+  create_table "chats", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "message", null: false
+    t.bigint "user_id"
+    t.bigint "flag_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["flag_id"], name: "index_chats_on_flag_id"
+    t.index ["user_id"], name: "index_chats_on_user_id"
+  end
 
   create_table "flags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "status", null: false
-    t.datetime "date", null: false
+    t.datetime "start_time", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -34,7 +44,16 @@ ActiveRecord::Schema.define(version: 2021_03_17_092622) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "followed_id", null: false
     t.index ["user_id"], name: "index_lists_on_user_id"
+  end
+
+  create_table "statuses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_statuses_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -54,4 +73,5 @@ ActiveRecord::Schema.define(version: 2021_03_17_092622) do
   add_foreign_key "list_flags", "flags"
   add_foreign_key "list_flags", "lists"
   add_foreign_key "lists", "users"
+  add_foreign_key "statuses", "users"
 end
