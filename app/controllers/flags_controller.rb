@@ -2,23 +2,23 @@ class FlagsController < ApplicationController
   before_action :authenticate_user!
 
   def show
-    binding.pry
-    @flags = Flag.where(start_time: )
+    #binding.pry
+    #@flags = Flag.where(start_time: )
   end
 
   def create
     @flag = Flag.new(flag_param)
     if @flag.save
-      redirect_to user_path(current_user.id), notice:"新しい予定の登録に成功しました"
+      redirect_to user_path(current_user.id), notice:"新たなクエストを設立しました"
     else
-      redirect_to user_path(current_user.id), notice:"新しい予定の登録に失敗しました"
+      redirect_to user_path(current_user.id), notice:"新たなクエストの設立に失敗しました"
     end
   end
 
   def destroy
     @flag = Flag.find(params[:id])
     @flag.destroy
-    redirect_to flags_path, notice:"削除しました"
+    redirect_to flags_path, notice:"クエストを取り消しました"
   end
 
   def edit

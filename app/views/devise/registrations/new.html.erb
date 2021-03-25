@@ -1,34 +1,46 @@
-<h2>Sign up</h2>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), class: 'form') do |f| %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true %>
+  <div class="form-title">
+    <h2 class="form-title-name">Welcome to torima</h2>
   </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autocomplete: "email" %>
+  <div class="form-error">
+    <%= render "devise/shared/error_messages", resource: resource %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+  <div class="form-group">
+      <div class='form-group-title'>
+        <%= f.label :name, "あなたの名前は？" %><br />
+      </div>
+      <%= f.text_field :name, class: 'form-group-input', placeholder: "使用するニックネーム", autofocus: true %>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  <div class="form-group">
+        <div class='form-group-title'>
+          <%= f.label :email,"あなたのメアドは？" %><br />
+        </div>
+    <%= f.email_field :email, class: 'form-group-input', placeholder: "ログイン用のメールアドレス", autocomplete: "email" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  <div class="form-group">
+        <div class='form-group-title'>
+          <%= f.label :password, "合言葉を唱えてください" %><br />
+          </div>
+    <%= f.password_field :password, class: 'form-group-input', placeholder: "ログイン用のパスワード（6文字以上、英数字混合）", autocomplete: "new-password" %>
+  </div>
+
+  <div class="form-group">
+        <div class='form-group-title'>
+          <%= f.label :password_confirmation, "もう一度唱えるのです" %><br />
+        </div>
+    <%= f.password_field :password_confirmation, placeholder: "確認のためパスワードを再度入力", class: 'form-group-input', autocomplete: "new-password" %>
+  </div>
+
+  <div class="form-group">
+      <%= f.submit "▶︎LET'S GO!", class: 'btn' %>
+  </div>
+
+  <div class="bottom-link">
+    <%= render "devise/shared/links" %>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>

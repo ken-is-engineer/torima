@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Torima</title>
+    <title>torima</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,14 @@
   </head>
 
   <body>
+    <header>
+        torima
+      <div class='header-button'>
+      <% if user_signed_in? %>
+        <%= link_to "Sign out", destroy_user_session_path, class:'header-button-text', method: :delete %>
+      <% end %>
+      </div>
+    </header>
     <%= yield %>
   </body>
 </html>

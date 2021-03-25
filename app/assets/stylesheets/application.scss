@@ -15,3 +15,10 @@
  */
 
 @import "simple_calendar";
+
+/*@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');*/
+
+@font-face {
+font-family: "dots-font";
+src: asset_url('/assets/dots-font.ttf')format("truetype");
+}

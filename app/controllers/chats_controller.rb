@@ -10,9 +10,9 @@ class ChatsController < ApplicationController
     @flag = Flag.find(params[:flag_id])
     @chat = @flag.chats.new(chat_param)
     if @chat.save
-      redirect_to flag_chats_path(@flag), notice:"メッセージを送信しました"
+      redirect_to flag_chats_path(@flag), notice:"メッセージを書き残した。"
     else
-      redirect_to flag_chats_path(@flag), notice:"メッセージの送信に失敗しました"
+      redirect_to flag_chats_path(@flag), notice:"メッセージを書き残そうとしたが失敗した"
     end
   end
 
