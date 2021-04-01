@@ -43,3 +43,13 @@
 .user-main-form{
   display: flex;
 }
+
+.date-day{
+  font-size: 24px;
+  color: rgb(87, 87, 87);
+}
+
+.date-quest{
+  font-size: 16px;
+  color: rgb(87, 87, 87);
+}

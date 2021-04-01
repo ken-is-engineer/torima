@@ -11,7 +11,12 @@
 
   <body>
     <header>
-        torima
+        <% if user_signed_in? %>
+          <%= link_to "torima", user_path(current_user.id), class:'header-link' %>
+        <% else %>
+          <div class='header-link'>torima</div>
+        <% end %>
+
       <div class='header-button'>
       <% if user_signed_in? %>
         <%= link_to "Sign out", destroy_user_session_path, class:'header-button-text', method: :delete %>

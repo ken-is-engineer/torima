@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :statuses
 
   resources :users do
-      #get 'date_show'
+      get "date_show"
   end
   resources :lists
 end

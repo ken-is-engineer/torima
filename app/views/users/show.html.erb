@@ -2,6 +2,9 @@
   <%= "-#{current_user.name}の冒険の書-"%>
 </div>
 
+<%= "フレンドコードは #{current_user.code} です。"%>
+<%= link_to 'Twitterで共有', "https://twitter.com/intent/tweet?text=torimaでスケジュール共有！%0afriend_code:%20#{current_user.code}%0a%23torima", title: 'Twitter', target: '_blank' %>
+
 <div class='user-notice-wrap'>
   <div class='user-notice-box'>
   <p id="notice" class='user-notice'>
@@ -43,11 +46,11 @@
 <br>
 
 <%= month_calendar events: @flags do |date, flags| %>
-  <%= date.day %>
+  <%= link_to "#{date.day}", user_date_show_path(current_user.id, date: date), class: 'date-day' %>
 
   <% flags.each do |flag| %>
     <div>
-      <%= link_to "#{flag.status} /#{User.find(flag.user_id).name}" , flag_chats_path(flag.id) %>
+      <%= link_to "#{flag.status} /#{User.find(flag.user_id).name}" , flag_chats_path(flag.id), class:'date-quest' %>
     </div>
   <% end %>
 <% end %>

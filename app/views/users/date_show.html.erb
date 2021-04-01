@@ -1,1 +1,43 @@
-<%= "hello" %>
+<p><%= form_with(model: @status, local: true, class: 'user-form') do |form| %>
+
+  <div class="user-form-name">
+    <%= form.label :status, "クエスト定型文を登録する" %>
+  </div>
+
+  <div class='user-form-input'>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="user-form-submit">
+    <%= form.submit "登録" %>
+  </div>
+
+<% end %></p>
+
+<p><%= form_with(model: @flag, local: true, class:'user-main-form') do |form| %>
+
+  <div class="user-main-form-name">
+    <%= form.label "日付をえらぶ" %>
+  </div>
+  
+  <div class='user-main-form-input'>
+    <%= form.datetime_select :start_time, {use_two_digit_numbers: true, default: @date, discard_minute: true, discard_hour: true}%>
+  </div>
+
+  <div class="user-main-form-name">
+    <%= form.label "定型文をえらぶ" %>
+  </div>
+
+  <div class='user-main-form-input'>
+    <%= form.select :status, Status.where(user_id: current_user.id).pluck(:name) %>
+  </div>
+
+  <div class="user-main-form-submit">
+    <%= form.submit %>
+  </div>
+
+<% end %></p>
+
+<% @flags.each do |flag| %>
+      <%= link_to "#{flag.status} /#{User.find(flag.user_id).name}" , flag_chats_path(flag.id) %>
+<% end %>
