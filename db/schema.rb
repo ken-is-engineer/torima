@@ -31,20 +31,11 @@ ActiveRecord::Schema.define(version: 2021_03_19_055350) do
     t.index ["user_id"], name: "index_flags_on_user_id"
   end
 
-  create_table "list_flags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "list_id", null: false
-    t.bigint "flag_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["flag_id"], name: "index_list_flags_on_flag_id"
-    t.index ["list_id"], name: "index_list_flags_on_list_id"
-  end
-
   create_table "lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "followed_id", null: false
+    t.string "followed_id", null: false
     t.index ["user_id"], name: "index_lists_on_user_id"
   end
 
@@ -60,6 +51,7 @@ ActiveRecord::Schema.define(version: 2021_03_19_055350) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "name", null: false
+    t.string "code", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -70,8 +62,6 @@ ActiveRecord::Schema.define(version: 2021_03_19_055350) do
   end
 
   add_foreign_key "flags", "users"
-  add_foreign_key "list_flags", "flags"
-  add_foreign_key "list_flags", "lists"
   add_foreign_key "lists", "users"
   add_foreign_key "statuses", "users"
 end

@@ -9,5 +9,5 @@ class User < ApplicationRecord
   has_many :chats
 
   validates :name, presence: true
-
+  validates :code, presence: true, uniqueness: true
 end
