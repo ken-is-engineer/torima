@@ -9,11 +9,11 @@
 - あなたが複数の友人グループに所属しているとしても、このアプリでは複数のグループの友人のスケジュールをまとめて閲覧できます。
 
 ## URL
-- 未デプロイ
+- https://kens-app-torima.herokuapp.com/users/sign_up
 
 ## テスト用アカウント
-- Basic認証 ID: ,PASS:
-- ログイン EMAIL:, PASS:
+- Basic認証 ID: ken, PASS: nekoneko
+- ログイン EMAIL: test@test, PASS: testtest1
 
 ## 利用方法
 - ユーザ登録/ログインページから、アカウント情報を入力してください
