@@ -35,7 +35,7 @@
 - 整理中
 
 ## 実装した機能
-- GIF貼付予定
+- ![sign-in](https://github.com/ken-is-engineer/torima/wiki-image/log-in.gif)
 
 ## 実装予定の機能
 - フレンドコードの複雑化
