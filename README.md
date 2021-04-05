@@ -35,7 +35,8 @@
 - 整理中
 
 ## 実装した機能
-- ![sign-in](https://github.com/ken-is-engineer/torima/tree/master/wiki-image/log-in.gif)
+- ![sign-in](https://user-images.githubusercontent.com/78405716/113540981-3ce7b180-961c-11eb-826d-93bc15819c60.gif)
+
 
 ## 実装予定の機能
 - フレンドコードの複雑化
