@@ -20,6 +20,9 @@ class UsersController < ApplicationController
     @flags = [list_flags,self_flags].flatten! #荒技すぎるか？しかし使用上問題なさそう。
     date = params[:date]
     @date = Date.parse(date).to_time
+
+    @flag = Flag.new
+    @status = Status.new
   end
 
   def destroy
