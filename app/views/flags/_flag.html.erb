@@ -1,4 +1,4 @@
-<p><%= form_with(model: @status, local: true, class: 'user-form') do |form| %>
+<div><%= form_with(model: @status, local: true, class: 'user-form') do |form| %>
 
   <div class="user-form-name">
     <%= form.label :status, "クエスト定型文を登録する" %>
@@ -12,9 +12,9 @@
     <%= form.submit "登録" %>
   </div>
 
-<% end %></p>
+<% end %></div>
 
-<p><%= form_with(model: @flag, local: true, class:'user-main-form') do |form| %>
+<div><%= form_with(model: @flag, local: true, class:'user-main-form') do |form| %>
 
   <div class="user-main-form-name">
     <%= form.label "日付をえらぶ" %>
@@ -36,4 +36,4 @@
     <%= form.submit %>
   </div>
 
-<% end %></p>
+<% end %></div>

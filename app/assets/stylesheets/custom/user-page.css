@@ -31,9 +31,7 @@
 }
 
 .form-wrap{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
 }
 
 .user-form{
@@ -42,6 +40,19 @@
 
 .user-main-form{
   display: flex;
+}
+
+.flag-form{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.friend-form{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 30px;
 }
 
 .date-day{

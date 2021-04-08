@@ -2,9 +2,6 @@
   <%= "-#{current_user.name}の冒険の書-"%>
 </div>
 
-<%= "フレンドコードは #{current_user.code} です。"%>
-<%= link_to 'Twitterで共有', "https://twitter.com/intent/tweet?text=torimaでスケジュール共有！%0afriend_code:%20#{current_user.code}%0a%23torima", title: 'Twitter', target: '_blank' %>
-
 <div class='user-notice-wrap'>
   <div class='user-notice-box'>
   <p id="notice" class='user-notice'>
@@ -14,10 +11,11 @@
 </div>
 
 <div class='form-wrap'>
-<%= form_with(model: @list, local: true, class: "user-form") do |form| %>
+  <div class="friend-form">
+  <%= form_with(model: @list, local: true, class: "user-form") do |form| %>
 
     <div class="user-form-name">
-      <%= form.label "friend_code" %>
+      <%= form.label "フレンド召喚の呪文を唱える：" %>
     </div>
 
     <div class='user-form-input'>
@@ -27,10 +25,15 @@
     <div class="user-form-submit">
       <%= form.submit %>
     </div>
+  <% end %>
 
-<% end %>
-
-<%= render partial:'flags/flag' %>
+  <%= "呪文（フレンドコード）： #{current_user.code} "%>
+  <%= link_to 'Twitterで共有', "https://twitter.com/intent/tweet?text=torimaでスケジュール共有！%0afriend_code:%20#{current_user.code}%0a%23torima", title: 'Twitter', target: '_blank' %>
+  </div>
+  
+  <div class=flag-form>
+    <%= render partial:'flags/flag' %>
+  </div>
 </div>
 
   <tbody>
