@@ -12,4 +12,5 @@ class StatusesController < ApplicationController
   def status_param
     params.require(:status).permit(:name).merge(user_id: current_user.id)
   end
+
 end
