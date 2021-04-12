@@ -1,11 +1,11 @@
 <div><%= form_with(model: @status, local: true, class: 'user-form') do |form| %>
 
-  <div class="user-form-name">
-    <%= form.label :status, "クエスト定型文を登録する" %>
+  <div class="user-form-name-wrap">
+    <%= form.label :status, "クエスト定型文を登録する", class:"user-form-name" %>
   </div>
 
-  <div class='user-form-input'>
-    <%= form.text_field :name %>
+  <div class='user-form-input-wrap'>
+    <%= form.text_field :name, class:'user-form-input' %>
   </div>
 
   <div class="user-form-submit">

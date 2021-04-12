@@ -5,6 +5,29 @@
   margin-top: 8px;
 }
 
+.user-form{
+  display: flex;
+}
+
+.user-form-name{
+  padding-top: 8px;
+  color:  rgb(87, 87, 87);
+}
+
+.user-form-input-wrap{
+  height: 24px;
+}
+
+.user-form-input{
+  padding: 10px 16px 8px;
+  border: none;
+  border-bottom: 2px solid rgb(87, 87, 87);
+  font-size: 16px;
+  resize: none;
+  color: rgb(87, 87, 87);
+  letter-spacing: 3px;
+}
+
 .user-notice-wrap{
   display: flex;
   align-items: center;
@@ -32,10 +55,6 @@
 
 .form-wrap{
   display: block;
-}
-
-.user-form{
-  display: flex;
 }
 
 .user-main-form{
